@@ -1,0 +1,169 @@
+global:
+  domainName: "onlineberatung.local"
+  dockerHostIp: "192.168.65.2"
+  enableTls: false
+  multitenancyEnabled: false
+  statisticsEnabled: "true"
+  topicsEnabled: false
+  demographicsEnabled: false
+  appointmentsEnabled: false
+
+# CSRF
+csrfCookieProperty: "CSRF-TOKEN"
+csrfHeaderProperty: "X-CSRF-TOKEN"
+# Keycloak
+keycloakRealm: "online-beratung"
+keycloakAuthServerUrl: "http://onlineberatung.local/auth"
+keycloakPrincipalAttribute: "preferred_username"
+keycloakserviceAdminClientid: "admin-cli"
+keycloakserviceAppClientid: "app"
+keycloakserviceTechuserId:  "658c7779-bb6d-42e2-bec9-3f2010b76ea1"
+identityOpenidConnectUrl: "/realms/online-beratung/protocol/openid-connect"
+identityOtpUrl: "/realms/online-beratung/otp-config"
+
+# Rocketchat
+rocketSystemuserId: "hjvBcfWH5vS3KLv27"
+rocketCredentialschedulerCron: "0 0 0/1 * * ?"
+
+# Agencyservice
+agencyServiceKeycloakResource: "agency-service"
+
+agencyServiceSpringProfilesActive: "dev"
+agencyServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-agencyservice/vi-saas-agencyservice"
+agencyServiceImageVersion: "dockerImage.v.72.VIC-732"
+
+# ConsultingTypeService
+consultingTypesJsonPath : "consulting-type-settings"
+consultingTypeServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-consultingtypeservice/vi-saas-consultingtypeservice"
+consultingTypeServiceImageVersion: "dockerImage.v.51.develop"
+consultingTypeServiceKeycloakResource: "consultingtype-service"
+
+# Frontend
+frontendImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-frontend-theme/vi-saas-frontend-theme"
+frontendImageVersion: "dockerImage.v.043-develop"
+
+# Live service
+liveServiceImageName: "docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-liveservice/liveservice-image"
+liveServiceImageVersion: "dockerimage.v.29.release-2021-06-29"
+liveServiceSpringProfilesActive: "prod"
+liveServiceAppBaseUrl: "http://onlineberatung.local"
+
+# Mail service
+mailServiceSpringProfilesActive: "dev"
+springMailHost: "mail.mail"
+springMailUsername: "xxx"
+springMailPassword: "xxx"
+springMailProtocol: "smtp"
+springMailDefaultEncoding:  "UTF-8"
+mailSender:  "noreply@onlineberatung.local"
+mailErrorRecipients: ""
+appImprintUrl: "http://onlineberatung.local/impressum"
+appDataprivacyUrl: "http://onlineberatung.local/datenschutz"
+mailServiceLoggingLevelRoot:  "DEBUG"
+mailServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-mailservice/vi-saas-mailservice"
+mailServiceImageVersion: "dockerImage.v.25.develop"
+
+# Message service
+messageServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-messageservice/vi-saas-messageservice"
+messageServiceImageVersion: "dockerImage.v.43.develop"
+messageServiceSpringProfilesActive: "local"
+messageServiceKeycloakResource: "message-service"
+csrfWhitelistHeaderProperty: ""
+
+# Upload service
+uploadServiceImageName: "docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-uploadservice/uploadservice-image"
+uploadServiceImageVersion: "dockerImage.v.28.develop"
+uploadServiceSpringProfilesActive: "local"
+uploadServiceKeycloakResource:  "upload-service"
+
+# User service
+userServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-userservice/vi-saas-userservice"
+userServiceImageVersion: "dockerImage.v.280.VIC93"
+consultantImportFilename: "import/consultants.csv"
+consultantImportProtocolFilename: "import/consultants-import.txt"
+askerImportFilename: "import/askers.csv"
+askerImportWithoutsessionFilename: "import/askers-without-session.csv"
+askerImportProtocolFilename: "import/askers-import.txt"
+askerImportWelcomeMessageFilename: "import/welcome_consulting_type_[ConsultingType].txt"
+askerImportWelcomeMessageFilenameReplaceValue: "[ConsultingType]"
+userServiceSpringProfilesActive: "dev"
+userServiceKeycloakResource: "user-service"
+firebaseConfigurationCredentialsFilePath: "/firebase/firebase-credentials.json"
+firebaseConfigurationNotificationMessage: "Du hast eine neue Nachricht erhalten"
+userAnonymousDeleteworkflowCron: "* * * * * ?"
+userAnonymousDeactivateworkflowCron: "* * * * * ?"
+sessionInactiveDeleteworkflowEnabled: "true"
+sessionInactiveDeleteworkflowCron: "0 0 * * * ?"
+sessionInactiveDeleteworkflowCheckDays: "30"
+
+# Video service
+videoServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-videoservice/vi-saas-videoservice"
+videoServiceImageVersion: "dockerImage.v.27.develop"
+videoServiceSpringProfilesActive: "dev"
+videoCallServerUrl: "video.onlineberatung.local"
+videoCallSecurityJwtAudience: "my_server1"
+videoCallSecurityJwtIssuer: "my_app_client"
+videoCallSecurityJwtSubject: "meet.jitsi"
+videoCallSecurityJwtSecret: "ca464fd202c74dc92139765ac798980204c4c1d3e8b69494ef897313fe58b936"
+videoServiceKeycloakResource: "video-service"
+
+# Tenant service
+tenantServiceSpringProfilesActive: "local"
+tenantServiceKeycloakResource: "tenant-service"
+tenantServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-tenantservice/vi-saas-tenantservice"
+tenantServiceImageVersion: "dockerImage.v.19.release-2022-04-27"
+
+# Admin console frontend
+adminconsoleImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-admin/vi-saas-admin"
+adminconsoleImageVersion: "dockerImage.v.293.develop"
+
+online-counseling-videobackend:
+  videoCallServerUrl: "video.onlineberatung.local"
+  turnHost: "turn.onlineberatung.local"
+  turnPort: "443"
+
+# Statistics Service
+statisticsServiceImageName: "docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-statisticsservice/caritas-onlineberatung-statisticsservice"
+statisticsServiceImageVersion: "dockerImage.v.6.develop"
+
+online-counseling-kibana:
+  elasticsearchHosts: "http://elasticsearch-master.default:9200"
+
+logstashHost: "http://logstash.default:8080"
+online-counseling-logstash:
+  elasticsearchHosts: "http://elasticsearch-master.default:9200"
+  # reading the value from ELASTICSEARCH_HOST configmap env variable causes logstash to crash, therefore hardcoded host configs here
+  logstashPipeline:
+    logstash.conf: |
+
+      input {
+       http { 
+            port => 8080 # default: 8080, not 9600 
+            codec => "json" 
+          }
+      }
+      
+      filter {
+         if [serviceName] != "frontend" {
+            drop{}
+         }
+         if ![request][correlationId] or ![request][timestamp] {
+           drop{}
+         }
+      }
+      output {
+        elasticsearch
+        {                 
+          hosts => ["http://elasticsearch-master.default:9200"]
+          user => '${ELASTICSEARCH_USERNAME}'
+          password => '${ELASTICSEARCH_PASSWORD}'
+          ecs_compatibility => disabled 
+          index => "http-log-%{+YYYY.MM.dd}" 
+          document_type => "json"
+        }
+      }
+online-counseling-backup:
+  enableBackup: false
+
+online-counseling-mongodb:
+  mongoVersion: "5.0"
