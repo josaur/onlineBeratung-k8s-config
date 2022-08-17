@@ -1,0 +1,22 @@
+name: "Helm upgrade"
+description: "Executes helm upgrade on repository"
+
+inputs:
+  ENVIRONMENT_NAME:
+    required: true
+  GSCLOUD_CLUSTERID:
+    required: true
+  GSCLOUD_USERID:
+    required: true
+  GSCLOUD_TOKEN:
+    required: true
+  VALUES_SECRET_YAML:
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "mic"
+  color: "purple"

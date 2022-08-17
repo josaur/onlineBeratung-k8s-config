@@ -1,0 +1,9 @@
+.idea/
+.git/
+charts/videobackend
+charts/backup
+terraform
+customization*
+charts/calcom
+charts/postgres
+environments
