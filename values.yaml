@@ -56,7 +56,7 @@ springMailPassword: "xxx"
 springMailProtocol: "smtp"
 springMailDefaultEncoding:  "UTF-8"
 mailSender:  "noreply@onlineberatung.local"
-mailErrorRecipients: ""
+# mailErrorRecipients:
 appImprintUrl: "http://onlineberatung.local/impressum"
 appDataprivacyUrl: "http://onlineberatung.local/datenschutz"
 mailServiceLoggingLevelRoot:  "DEBUG"
@@ -68,7 +68,7 @@ messageServiceImageName: "docker.pkg.github.com/virtualidentityag/vi-saas-messag
 messageServiceImageVersion: "dockerImage.v.43.develop"
 messageServiceSpringProfilesActive: "local"
 messageServiceKeycloakResource: "message-service"
-csrfWhitelistHeaderProperty: ""
+# csrfWhitelistHeaderProperty:
 
 # Upload service
 uploadServiceImageName: "docker.pkg.github.com/caritasdeutschland/caritas-onlineberatung-uploadservice/uploadservice-image"
