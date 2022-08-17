@@ -1,6 +1,6 @@
-# This is a example deployment workflow for deploying you changes with helm. In this workflow we assume a pre configured
-# github environment named develop containing secrets for your kubernetes cluster id, your kubernetes user id,
-# your kubernetes access token and all secret values used for deployment.
+# This is a example deployment workflow for deploying you changes with helm. In this workflow we assume pre configured
+# github secrets for your kubernetes cluster id, your kubernetes user id, your kubernetes access token and all secret
+# values used for deployment.
 
 name: Deployment Online Beratung example
 
@@ -13,7 +13,6 @@ jobs:
   develop:
     name: Deployment Workflow example
     runs-on: ubuntu-latest
-    environment: develop
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
