@@ -1,0 +1,3 @@
+[submodule "lib/saas"]
+	path = lib/saas
+	url = https://github.com/virtualidentityag/vi-saas-kubernetes.git
