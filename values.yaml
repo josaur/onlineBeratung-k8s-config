@@ -7,6 +7,7 @@ global:
   topicsEnabled: false
   demographicsEnabled: false
   appointmentsEnabled: false
+  adminConsoleEnabled: false
 
 # CSRF
 csrfCookieProperty: "CSRF-TOKEN"
