@@ -1,8 +1,7 @@
 # This is a example deployment workflow for deploying you changes with helm. In this workflow we assume pre configured
 # github secrets for your kubernetes cluster id, your kubernetes user id, your kubernetes access token and all secret
 # values used for deployment.
-
-name: Deployment Online Beratung example
+name: Deployment Online Beratung Develop example
 
 on:
   push:
