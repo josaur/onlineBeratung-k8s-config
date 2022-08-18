@@ -24,4 +24,4 @@ rm tmp/gscloud_0.11.0_linux_amd64.zip
 
 printenv INPUT_VALUES_SECRET_YAML > ./tmp/values-secrets-$INPUT_ENVIRONMENT.yaml
 
-helm upgrade saas ./tmp -f ./tmp/values-$INPUT_ENVIRONMENT.yaml -f ./tmp/values-secrets-$INPUT_ENVIRONMENT.yaml -n $INPUT_ENVIRONMENT
+helm upgrade saas ./tmp/k8s -f ./tmp/values-$INPUT_ENVIRONMENT.yaml -f ./tmp/values-secrets-$INPUT_ENVIRONMENT.yaml -n $INPUT_ENVIRONMENT
