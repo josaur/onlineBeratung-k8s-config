@@ -24,6 +24,12 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v19
 
+      - name: Adapt .gitmodules for using latest changes of k8s develop branch
+        run: |
+          git submodule set-branch -b develop k8s
+          git submodule sync
+          git submodule update --remote
+
       - name: Helm upgrade
         if: contains(steps.changed-files.outputs.modified_files, 'values.yaml')
         uses: ./deployment
