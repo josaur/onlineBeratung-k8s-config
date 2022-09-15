@@ -3,10 +3,13 @@
 # values used for deployment.
 name: Deployment Online Beratung Staging example
 
+env:
+  K8S_SUBMODULE_VERSION: v0.0.1
+
 on:
   push:
-    branches:
-      - staging
+    paths:
+      - 'values-staging.yaml'
 
 jobs:
   staging:
@@ -20,11 +23,10 @@ jobs:
           submodules: true
           token: ${{ secrets.GH_PACKAGE_RELEASE_TOKEN }}
 
-      - name: Adapt .gitmodules for staging k8s branch
+      - name: Adapt .gitmodules for using k8s release
         run: |
-          git submodule set-branch -b staging k8s
-          git submodule sync
-          git submodule update --remote
+          cd k8s
+          git checkout tags/$K8S_SUBMODULE_VERSION
 
       - name: Adapt .helmignore for staging
         run: |

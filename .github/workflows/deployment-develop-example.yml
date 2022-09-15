@@ -3,10 +3,13 @@
 # values used for deployment.
 name: Deployment Online Beratung Develop example
 
+env:
+  K8S_SUBMODULE_VERSION: v0.0.1
+
 on:
   push:
-    branches:
-      - develop
+    paths:
+      - 'values.yaml'
 
 jobs:
   develop:
@@ -16,19 +19,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           submodules: true
           token: ${{ secrets.GH_PACKAGE_RELEASE_TOKEN }}
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v19
-
-      - name: Adapt .gitmodules for using latest changes of k8s develop branch
+      - name: Adapt .gitmodules for using k8s release
         run: |
-          git submodule set-branch -b develop k8s
-          git submodule sync
-          git submodule update --remote
+          cd k8s
+          git checkout tags/$K8S_SUBMODULE_VERSION
 
       - name: Helm upgrade
         if: contains(steps.changed-files.outputs.modified_files, 'values.yaml')
