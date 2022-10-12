@@ -17,11 +17,17 @@ kubectl create configmap keycloak-theme-templates-messages-$2-configmap --from-f
 kubectl delete configmap keycloak-theme-templates-styles-$2-configmap -n $1
 kubectl create configmap keycloak-theme-templates-styles-$2-configmap --from-file=./keycloak-resources/custom-theme/login/resources/css -n $1
 
+kubectl delete configmap keycloak-theme-templates-js-$2-configmap -n $1
+kubectl create configmap keycloak-theme-templates-js-$2-configmap --from-file=./keycloak-resources/custom-theme/login/resources/js -n $1
+
 kubectl delete configmap keycloak-theme-templates-fonts-$2-configmap -n $1
 kubectl create configmap keycloak-theme-templates-fonts-$2-configmap --from-file=./keycloak-resources/custom-theme/login/resources/fonts/Nunito -n $1
 
 kubectl delete configmap keycloak-theme-email-html-$2-configmap -n $1
 kubectl create configmap keycloak-theme-email-html-$2-configmap --from-file=./keycloak-resources/custom-theme/email/html -n $1
+
+kubectl delete configmap keycloak-theme-email-$2-configmap -n $1
+kubectl create configmap keycloak-theme-email-$2-configmap --from-file=./keycloak-resources/custom-theme/email -n $1
 
 kubectl delete configmap keycloak-theme-email-messages-$2-configmap -n $1
 kubectl create configmap keycloak-theme-email-messages-$2-configmap --from-file=./keycloak-resources/custom-theme/email/messages -n $1
