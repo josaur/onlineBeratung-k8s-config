@@ -20,7 +20,7 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
 4. Execute the script: for non helm managed resources\
 `sh ./customization/setup_customization_configmaps.sh <namespace> <release_name>`
 5. Install the helm chart\
-`helm install <release_name> k8s -f values.yaml -f values-secrets.yaml`
+`helm install <release_name> k8s --wait-for-jobs -f values.yaml -f values-secrets.yaml`
 
 ### Upgrading an existing helm release based on a branch
 1. Make sure you have the latest changes of git submodule if you work on a branch \
