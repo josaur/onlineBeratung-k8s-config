@@ -15,9 +15,9 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
 - `video.onlineberatung.localhost -> 127.0.0.1`
 2. In order to be able to pull images from docker repository you create a Kubernetes secret named registry-secret\
 `kubectl create secret docker-registry registry-secret --docker-server=ghcr.io --docker-username=<your-github-username> --docker-password=<your-github-password> --docker-email=<your-email>`
-2. Install the nginx Ingress Controller for Kubernetes\
+3. Install the nginx Ingress Controller for Kubernetes\
 `helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace`
-3. Execute the script: for non helm managed resources\
+4. Execute the script: for non helm managed resources\
 `sh ./customization/setup_customization_configmaps.sh <namespace> <release_name>`
 5. Install the helm chart\
 `helm install <release_name> k8s -f values.yaml -f values-secrets.yaml`
