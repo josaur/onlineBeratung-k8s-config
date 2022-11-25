@@ -1,3 +1,6 @@
 [submodule "k8s"]
 	path = k8s
-	url = https://github.com/virtualidentityag/vi-saas-kubernetes.git
+	url = https://github.com/Onlineberatung/onlineBeratung-kubernetes.git
+[submodule "k8s-ops"]
+	path = k8s-ops
+	url = https://github.com/Onlineberatung/onlineBeratung-kubernetes-ops.git
