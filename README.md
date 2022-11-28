@@ -37,3 +37,29 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
    `git checkout tags/<release_tag>`
 2. Execute helm upgrade\
    `helm upgrade <release_name> k8s -f values.yaml -f values-secrets.yaml`
+
+
+### Custom steps needed for Apple M1 chip users
+If you use computers with apple m1 chips, you'll need to build your keycloak and consulting type service image locally and use these versions.
+1. `git clone https://github.com/Onlineberatung/onlineberatung-keycloak-otp.git`
+1. `cd onlineberatung-keycloak-otp`
+2. `git checkout develop `
+3. `git pull origin develop`
+4. `mvn clean install`
+5. In Dockerfile of the project add target folder prefix for the jar (`target/`) in the COPY line
+5. `docker build . -t keycloak:dockerImage.develop.m1`
+
+Go to onlineBeratung-k8s-config/k8s/charts/keycloak/values.yaml and change the value to your custom built image version.
+
+Repeat similar steps for consultingtype service:
+
+1. `git clone https://github.com/Onlineberatung/onlineBeratung-consultingTypeService.git`
+2. `cd consultingTypeService`
+3. `git checkout develop `
+4. `git pull origin develop`
+5. `mvn clean install`
+6. In Dockerfile of the project add target folder prefix for the jar (`target/`) in the COPY line
+7. `docker build . -t consultingtype-service:dockerImage.develop.m1`
+
+Go to values.yaml and change the value of consulting type service to your locally built m1 version.
+Perform helm upgrade as described in the previous steps.
