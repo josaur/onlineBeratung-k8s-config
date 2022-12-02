@@ -8,6 +8,9 @@ It already provides the accoring k8s resources within a submodule pointing to ku
 3. helm
 4. Lens (optional but recommended for having a view on k8s cluster)
 
+#### For usage with Minikube
+A minikube with too little RAM can cause various problems during installation, for this reason we recommend allocating at least 10gb of RAM.
+
 ### Installation
 1. If you install the chart on a local cluster and use the default configuration make sure you have 
 the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\System32\drivers\etc\hosts` (Windows)
@@ -21,6 +24,7 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
 `sh ./customization/setup_customization_configmaps.sh <namespace> <release_name>`
 5. Install the helm chart\
 `helm install <release_name> k8s --wait-for-jobs -f values.yaml -f values-secrets.yaml`
+6. (For minikube: use `minikube tunnel` on the host to access the cluster)
 
 ### Upgrading an existing helm release based on a branch
 1. Make sure you have the latest changes of git submodule if you work on a branch \
