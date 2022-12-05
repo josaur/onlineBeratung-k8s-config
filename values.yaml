@@ -57,8 +57,6 @@ liveServiceAppBaseUrl: "http://onlineberatung.localhost"
 # Mail service
 mailServiceSpringProfilesActive: "dev"
 springMailHost: "mail.mail"
-springMailUsername: "xxx"
-springMailPassword: "xxx"
 springMailProtocol: "smtp"
 springMailDefaultEncoding:  "UTF-8"
 mailSender:  "noreply@app.onlineberatung.local"
