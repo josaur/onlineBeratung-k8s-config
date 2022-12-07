@@ -4,7 +4,7 @@
 name: Deployment Online Beratung Staging example
 
 env:
-  K8S_SUBMODULE_VERSION: v0.0.1
+  K8S_SUBMODULE_VERSION: v0.0.4
 
 on:
   push:
