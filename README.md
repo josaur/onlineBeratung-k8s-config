@@ -17,8 +17,8 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
 `kubectl create secret docker-registry registry-secret --docker-server=ghcr.io --docker-username=<your-github-username> --docker-password=<your-github-password> --docker-email=<your-email>`
 3. Install the nginx Ingress Controller for Kubernetes\
 `helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace`
-4. Execute the script: for non helm managed resources\
-`sh ./customization/setup_customization_configmaps.sh <namespace> <release_name>`
+4. Navigate to the customization folder and execute the script: for non helm managed resources\
+`sh setup_customization_configmaps.sh <namespace> <release_name>`
 5. Install the helm chart\
 `helm install <release_name> k8s --wait-for-jobs -f values.yaml -f values-secrets.yaml`
 
