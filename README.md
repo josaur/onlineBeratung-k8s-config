@@ -22,6 +22,14 @@ the following local domain mappings in `/etc/hosts` (Linux) or `C:\Windows\Syste
 5. Install the helm chart\
 `helm install <release_name> k8s --wait-for-jobs -f values.yaml -f values-secrets.yaml`
 
+#### Local setup with Minikube
+For local setup on a minicube cluster, two additional steps are required after installation:
+
+1. Use `minikube tunnel` on the host to access the cluster
+2. Userservice, messageservice, and uploadservice run sidecars to set up master keys. On minikube, use `kubectl port-forward -n ingress-nginx service/ingress-nginx-controller 80:80` to forward nginx port 80 to make this work
+
+If you are experiencing problems, we have found that a minikube with too little memory can cause various problems during installation. For this reason we recommend allocating at least 10gb of RAM.
+
 ### Upgrading an existing helm release based on a branch
 1. Make sure you have the latest changes of git submodule if you work on a branch \
 `cd k8s`\
