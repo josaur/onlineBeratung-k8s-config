@@ -1,9 +1,0 @@
-[submodule "k8s"]
-	path = k8s
-	url = https://github.com/Onlineberatung/onlineBeratung-kubernetes.git
-[submodule "k8s-ops"]
-	path = k8s-ops
-	url = https://github.com/Onlineberatung/onlineBeratung-kubernetes-ops.git
-[submodule "k8s-extentions"]
-	path = k8s-extentions
-	url = https://github.com/virtualidentityag/vi-saas-kubernetes-extentions.git

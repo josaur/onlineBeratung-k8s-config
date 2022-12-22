@@ -1,7 +1,0 @@
-.premeeting-screen {
-  // Hide the button to enter a room password, since we don't use passwords
-  // https://github.com/jitsi/jitsi-meet/issues/7115
-  [data-testid="lobby.enterPasswordButton"] {
-    display: none;
-  }
-}
